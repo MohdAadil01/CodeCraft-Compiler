@@ -12,8 +12,12 @@ app.use(cors());
 
 dbConnect();
 
+app.get("/", (req, res) => {
+  res.send("Server started");
+});
+
 app.use("/compiler", codeRouter);
 
 app.listen(process.env.PORT, () => {
-  console.log("Server started");
+  console.log("Server running on port");
 });
