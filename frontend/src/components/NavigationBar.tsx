@@ -54,9 +54,12 @@ function NavigationBar() {
   const saveCodeHandler = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4000/compiler/save", {
-        fullCode: fullCode,
-      });
+      const response = await axios.post(
+        "https://code-craft-server-b3r5llngo-mohd-aadils-projects.vercel.app/compiler/save",
+        {
+          fullCode: fullCode,
+        }
+      );
       navigate(`/compiler/${response.data.url}`, { replace: true });
     } catch (error) {
       ErrorHandler(error);
