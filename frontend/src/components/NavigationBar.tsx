@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Loader2, Save, Share2, Code, Copy } from "lucide-react";
 import { toast } from "sonner";

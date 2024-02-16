@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import React from "react";
-
 function ErrorPage() {
   return (
     <div className="flex flex-col justify-center items-center h-[calc(100vh-60px)] bg-gray-800 text-white w-full">
