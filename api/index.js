@@ -8,7 +8,13 @@ const app = express();
 config();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://code-craft-rho.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 dbConnect();
 
