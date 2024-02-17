@@ -14,7 +14,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/compiler" element={<Compiler />}></Route>
-          <Route path="/compiler/:urlId" element={<Compiler />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </ThemeProvider>
