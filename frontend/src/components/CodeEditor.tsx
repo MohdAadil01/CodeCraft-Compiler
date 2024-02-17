@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { tags as t } from "@lezer/highlight";
 import { draculaInit } from "@uiw/codemirror-theme-dracula";
