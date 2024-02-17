@@ -11,6 +11,7 @@ function CodeEditor() {
   const currentLanguage = useSelector(
     (state: RootState) => state.complerSlice.currentLanguage
   );
+
   const fullCode = useSelector(
     (state: RootState) => state.complerSlice.fullCode
   );

@@ -64,15 +64,14 @@ const compilerSlice = createSlice({
     updatecodeValue: (state, action: PayloadAction<string>) => {
       state.fullCode[state.currentLanguage] = action.payload;
     },
-    updateFullCode: (
-      state,
-      action: PayloadAction<compilerSliceStateType["fullCode"]>
-    ) => {
-      state.fullCode = action.payload;
-    },
+    // updateFullCode: (
+    //   state,
+    //   action: PayloadAction<compilerSliceStateType["fullCode"]>
+    // ) => {
+    //   state.fullCode = action.payload;
+    // },
   },
 });
 
 export default compilerSlice.reducer;
-export const { updateCurrentLanguage, updatecodeValue, updateFullCode } =
-  compilerSlice.actions;
+export const { updateCurrentLanguage, updatecodeValue } = compilerSlice.actions;
