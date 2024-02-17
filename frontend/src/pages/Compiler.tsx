@@ -22,7 +22,7 @@ function Compiler() {
       const getSavedCode = async () => {
         try {
           const response = await axios.post(
-            "https://code-craft-server-b3r5llngo-mohd-aadils-projects.vercel.app/compiler/savedCode",
+            "https://code-craft-server-five.vercel.app/compiler/savedCode",
             { urlId: urlId }
           );
           dispatch(updateFullCode(response.data.fullCode));

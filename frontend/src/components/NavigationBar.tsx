@@ -55,7 +55,7 @@ function NavigationBar() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://code-craft-server-b3r5llngo-mohd-aadils-projects.vercel.app/compiler/save",
+        "https://code-craft-server-five.vercel.app/compiler/save",
         {
           fullCode: fullCode,
         }
