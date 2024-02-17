@@ -16,7 +16,7 @@ export default codeController;
 
 export const savedCodeController = async (req, res) => {
   try {
-    const { urlId } = req.body;
+    const urlId = req.params.urlId;
     const savedCode = await Code.findById(urlId);
     if (!savedCode) {
       res.status(404).send({ message: "Code not found" });
