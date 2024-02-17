@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { tags as t } from "@lezer/highlight";
 import { draculaInit } from "@uiw/codemirror-theme-dracula";
@@ -11,7 +11,6 @@ function CodeEditor() {
   const currentLanguage = useSelector(
     (state: RootState) => state.complerSlice.currentLanguage
   );
-
   const fullCode = useSelector(
     (state: RootState) => state.complerSlice.fullCode
   );

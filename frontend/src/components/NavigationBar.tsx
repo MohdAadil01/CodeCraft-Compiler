@@ -1,8 +1,6 @@
-// import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Save, Share2, Code, Copy } from "lucide-react";
 import { toast } from "sonner";
-// import axios from "axios";
 import {
   Select,
   SelectContent,
@@ -25,48 +23,14 @@ import {
   compilerSliceStateType,
   updateCurrentLanguage,
 } from "@/redux/slices/compilerSlice";
-// import { ErrorHandler } from "@/utils/ErrorHandler";
-// import { useNavigate, useParams } from "react-router-dom";
 
 function NavigationBar() {
-  // const [loading, setLoading] = useState<boolean>(false);
-  // const [showShareBtn, setShowShareBtn] = useState<boolean>(false);
-
-  // const { urlId } = useParams();
-
-  // useEffect(() => {
-  //   if (urlId) {
-  //     setShowShareBtn(true);
-  //   } else {
-  //     setShowShareBtn(false);
-  //   }
-  // }, [urlId]);
-
-  // const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const fullCode = useSelector(
-  //   (state: RootState) => state.complerSlice.fullCode
-  // );
+
   const currentLanguage = useSelector(
     (state: RootState) => state.complerSlice.currentLanguage
   );
 
-  // const saveCodeHandler = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.post(
-  //       "https://code-craft-server-five.vercel.app/compiler/save",
-  //       {
-  //         fullCode: fullCode,
-  //       }
-  //     );
-  //     navigate(`/compiler/${response.data.url}`, { replace: true });
-  //   } catch (error) {
-  //     ErrorHandler(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
   return (
     <div className="bg-black sm:flex sm:justify-between sm:items-center p-2 sm:h-[60px]">
       <div className="__button_container flex sm:gap-2 gap-1">
