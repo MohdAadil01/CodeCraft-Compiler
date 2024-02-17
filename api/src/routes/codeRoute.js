@@ -10,9 +10,6 @@ codeRouter.get("/save", (req, res) => {
 });
 codeRouter.post("/save", codeController);
 
-codeRouter.get("/savedCode", (req, res) => {
-  res.status(200).send({ message: "Working save route" });
-});
-codeRouter.post("/savedCode", savedCodeController);
+codeRouter.get("/:urlId", savedCodeController);
 
 export default codeRouter;

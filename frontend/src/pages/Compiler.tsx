@@ -17,24 +17,29 @@ import { updateFullCode } from "@/redux/slices/compilerSlice";
 function Compiler() {
   const { urlId } = useParams();
   const dispatch = useDispatch();
+
+  console.log(urlId);
+
+  const getSavedCode = async () => {
+    try {
+      if (urlId) {
+        const response = await axios.get(
+          `https://code-craft-server-five.vercel.app/compiler/${urlId}`
+        );
+        dispatch(updateFullCode(response.data.fullCode));
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        if (error?.response?.status === 500) {
+          toast("Invalid URL, Default Code Loaded");
+        }
+      }
+      ErrorHandler(error);
+    }
+  };
+
   useEffect(() => {
     if (urlId) {
-      const getSavedCode = async () => {
-        try {
-          const response = await axios.post(
-            "https://code-craft-server-five.vercel.app/compiler/savedCode",
-            { urlId: urlId }
-          );
-          dispatch(updateFullCode(response.data.fullCode));
-        } catch (error) {
-          if (axios.isAxiosError(error)) {
-            if (error?.response?.status === 500) {
-              toast("Invalid URL, Default Code Loaded");
-            }
-          }
-          ErrorHandler(error);
-        }
-      };
       getSavedCode();
     }
   }, [urlId]);
